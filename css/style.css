@@ -183,9 +183,10 @@ input {
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
   .content {
-    flex: 1;
-    padding: 20px;
+    
+    padding: 10px;
     display: flex;
+    
     
     
 }
@@ -250,29 +251,199 @@ section {
 
 
 .community-board {
-    flex: 1;
+    width: 100%;
+    display: flex;
 }
 
 .community-board ul {
-    float: left;
-    width: 450px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+   
 }
 
 .community-board li {
+    display: flex;
+    align-items: center; 
     height: 32px;
     line-height: 32px;
-    font-size: 15px;
-    margin : 0 10px;
+    font-size: 13px;
+   
+    border-top: 1px solid #ccc; 
+    padding-top: 20px;
+    padding-bottom: 15px; 
+    
+
+}
+
+.community-board li a {
+    display: flex;
+    align-items: center; 
+    width: 100%;
 }
 
 
+.community-board li:hover {
+    font-weight: bold;
+}
 
-.job-panel {
+.board_header a {
+    background-color: #f9f9f9; 
+    border: 3px solid #dddddd83; 
+    padding: 0;
+
+}
+
+
+.board_header span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.board_header .post-date {
+   padding-right: 25px;
+   text-align: right;
+
+}
+
+
+.post-number {
+    width: 30px; 
+    text-align: center; 
+}
+
+.post-title {
+    flex: 1; 
+    margin-right: 120px; 
+}
+
+.post-date {
     flex: 1;
-    position: relative;
+    text-align: right;
+    font-size: 12px;
+    padding-right: 10px;
 }
+
+.slider-container {
+    align-items: center; /* 세로 가운데 정렬 */
+   
+}
+
+.slider {
+    width: 500px;
+    display: flex;
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    
+  }
+
+.slider-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .slider-container li {
+    display: inline; /* 또는 display: inline-block; */
+    margin-right: 10px; /* 각 항목 사이의 간격을 조절할 수 있습니다. */
+  }
+  
+  .arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+  }
+
+
+  .job-panel {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-left: 35px;
+    width: 500px;
+}
+
+.grid-item {
+    flex-basis: calc(33.33% - 33px); /* 3개의 아이템이 한 줄에 나올 수 있도록 너비 설정 (margin 제외) */
+    margin: 5px; /* 그리드 아이템 사이의 간격 설정 */
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.grid-item a {
+    display: block;
+    width: 50%;
+    border-radius: 10px; /* 이미지에도 border radius 적용 */
+    padding: 10px 0;;
+    text-align: center;
+}
+
+/* 이미지 스타일 */
+.grid-item img {
+    width: 60px;
+    height: auto;
+}
+
+.grid-item span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.tab-container {
+    margin-top: 20px;
+    display: flex;
+}
+.tab-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 30%;
+}
+.tab-bar li {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.tab-bar li:last-child{
+    margin-bottom: 0;
+}
+.tab-bar a {
+    display: block;
+    padding: 20px;
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+}
+.tab-bar a:hover {
+    background-color: #aaa;
+    color: #fff;
+}
+.tab-bar a.active {
+    background-color: #f0f0f0;
+    opacity: 0.8;
+    color: #333;
+}
+.tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #000;
+    width: 70%;
+}
+.tab-content.active {
+    display: block;
+}
+
 
 
 .best {}
