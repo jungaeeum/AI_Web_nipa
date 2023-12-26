@@ -1,0 +1,251 @@
+@charset "urf-8";
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@300;700&family=Unna&display=swap');
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #ddd;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.4;
+
+}
+
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+
+.en {
+    font-family: 'Unna', serif;
+
+}
+
+.en1 {
+    font-family: 'Maven Pro', sans-serif;
+
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+
+header {
+    width: 100%;
+    background: red;
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s;
+}
+
+header .menuOpen {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 16px;
+    line-height: 100px;
+}
+
+header .menuOpen span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .menuOpen span.mid {
+    top: 50%;
+}
+
+header .menuOpen span.bot {
+    top: 100%;
+}
+
+header .book {
+    display: inline-block;
+    float: left;
+    margin-left: 70px;
+    height: 100%;
+    font-size: 25px;
+}
+
+header .langs {
+    float: left;
+    margin-left: 220px;
+    overflow: hidden;
+    width: 150px;
+    background: green;
+}
+
+header .langs li {
+    float: left;
+    width: 50%;
+}
+
+header .langs li:nth-child(1) {
+    font-weight: bold;
+}
+
+header .langs li:nth-child(2) {
+    color: #ddd
+}
+
+header .langs li a {
+    display: block;
+    padding: 0 30px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+header .right {
+    float: right;
+}
+
+header .right li {
+    float: left;
+    margin-right: 55px;
+}
+
+header .right li:nth-child(2) {
+    margin-right: 0;
+}
+
+header .right li .logo {
+    width: 150px;
+    height: 100px;
+}
+
+header .right li .logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+header .right li .logo img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+header .right li .logo img:nth-child(2) {
+    opacity: 0;
+}
