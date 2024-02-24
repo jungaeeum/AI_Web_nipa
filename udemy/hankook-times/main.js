@@ -4,18 +4,17 @@ let newsList = [];
 let totalResults = 0;
 let page = 1;
 let totalPage = 1;
-const pageSize = 10;
-const groupSize = 5;
+const PAGE_SIZE = 10;
 
 let url = new URL("https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&page_size=10");
-const menus = document.querySelectorAll(".menus button");
+const menus = document.querySelectorAll("#menu-list button");
 menus.forEach((menu) => menu.addEventListener("click", (event) => getNewsByCategory(event)));
 
-const getNews = async (url) => {
+const getNews = async () => {
   try {
+    url.searchParams.set("page", page); // 8.page를 달아준다
     let header = new Headers();
     header.append("x-api-key", API_KEY);
-    url.searchParams.set("page", page); // 8.page를 달아준다
 
     const response = await fetch(url, { headers: header });
 
@@ -30,7 +29,7 @@ const getNews = async (url) => {
       }
       console.log("B", data);
       newsList = data.articles;
-      totalPage = data.total_pages;
+      totalPage = Math.ceil(data.total_pages / PAGE_SIZE);
       render();
       paginationRender();
     } else {
@@ -48,24 +47,24 @@ const getNews = async (url) => {
   }
 };
 
-const getLatestNews = async () => {
+const getLatestNews = () => {
   page = 1; // 9. 새로운거 search마다 1로 리셋
   url = new URL(`https://newsapi.org/v2/top-headlines?country=KR&apiKey=${API_KEY}`);
-  getNews(url);
+  getNews();
 };
 
 const getNewsByCategory = async (event) => {
   page = 1; // 9. 새로운거 search마다 1로 리셋
   const category = event.target.textContent.toLowerCase();
   url = new URL(`https://newsapi.org/v2/top-headlines?country=KR&category=${category}&apiKey=${API_KEY}`);
-  getNews(url);
+  getNews();
 };
 
 const getNewsByKeyword = async () => {
   page = 1; // 9. 새로운거 search마다 1로 리셋
   const keyword = document.getElementById("search-input").value;
   url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&page_size=10`);
-  getNews(url);
+  getNews();
 };
 
 const render = () => {
@@ -80,9 +79,12 @@ const render = () => {
 
     </div>
     <div class="col-lg-8">
-        <h2>${news.title}</h2>
+    <h2>
+    
+    <a class="title" target="_blank" href="${news.link}">${news.title}</a>
+    </h2>
         <p>
-            ${news.description}
+            ${news.summary == null || news.summary == "" ? "내용없음" : news.summary.length > 200 ? news.summary.substring(0, 200) + "..." : news.summary}
         </p>
         <div>
             ${news.source.name} * ${news.publishedAt}
